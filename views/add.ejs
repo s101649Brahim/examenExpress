@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Products</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="well">
+      <h2>Add a product</h2>
+      <br /><br />
+      <form action="/add" method="POST">
+        <table>
+          <tr>
+            <td>Naam :</td>
+            <td><input type="text" name="naam" /></td>
+          </tr>
+          <tr>
+            <td>Examen :</td>
+            <td><input type="text" name="examen" /></td>
+          </tr>
+          <tr>
+            <td>Reden :</td>
+            <td><input type="text" name="reden" /></td>
+          </tr>
+          <tr>
+            <td> :</td>
+            <td><label name="datum" /></td>
+          </tr>
+          <tr>
+            <td><button type="submit">Add</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
