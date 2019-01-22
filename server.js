@@ -34,6 +34,7 @@ app.get("/add", (req, res) => {
 
 // Add a product to the db
 app.post("/add", (req, res) => {
+  req.body.datum = moment().format("YYYY-MM-dd:hh:mm:ss");
   console.log(req.body);
   // db.collection("inhaal").insertOne(req.body, (err, result) => {
   // if (err) return console.log(err);
