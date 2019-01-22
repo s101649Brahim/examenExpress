@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Studenten</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+    <h2>Result</h2>
+    <br /><br />
+    <p class="student">
+      <span><b>Naam : </b><%= student.naam %></span><br />
+      <span><b>Examen : </b><%= student.examen %></span><br />
+      <span><b>Reden : </b><%= student.reden %></span><br />
+      <span><b>Datum : </b><%= student.datum %></span><br />
+    </p>
+
+    <form action="/Terug" method="POST">
+      <span><button type="submit">Terug</button></span>
+    </form>
+  </body>
+</html>

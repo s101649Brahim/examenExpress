@@ -35,9 +35,25 @@ app.get("/add", (req, res) => {
 // Add a product to the db
 app.post("/add", (req, res) => {
   req.body.datum = moment().format("YYYY-MM-dd:hh:mm:ss");
-  console.log(req.body);
-  // db.collection("inhaal").insertOne(req.body, (err, result) => {
-  // if (err) return console.log(err);
-  res.redirect("/add");
-  // });
+
+  if (
+    db.collection("inhaal").find(req.body.naam) != req.body.naam &&
+    db.collection("inhaal").find(req.body.examen) != req.body.examen &&
+    db.collection("inhaal").find(req.body.reden) != req.body.reden
+  ) {
+    db.collection("inhaal").insertOne(req.body, (err, result) => {
+      if (err) return console.log(err);
+    });
+  }
+
+  db.collection("inhaal")
+    .find()
+    .toArray(function(err, result) {
+      if (err) return console.log(err);
+      res.render("search_result.ejs", { student: result[0] });
+    });
+});
+
+app.post("/Terug", (req, res) => {
+  res.redirect("./add");
 });
